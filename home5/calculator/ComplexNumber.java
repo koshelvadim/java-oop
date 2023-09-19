@@ -2,7 +2,6 @@ package home5.calculator;
 
 public class ComplexNumber {
     private double realPart;
-
     private double imaginaryPart;
 
     public ComplexNumber(double realPart, double imaginaryPart) {
