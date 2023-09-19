@@ -6,20 +6,12 @@ import java.util.Scanner;
 
 public class NumberService implements NumberInter {
     private List<ComplexNumber> complexNumbers;
-    private List<RationalNumber> rationalNumbers;
     public NumberService() {
         this.complexNumbers = new ArrayList<>();
-        this.rationalNumbers = new ArrayList<>();
     }
-
 
     public List<ComplexNumber> getAllComplexNumbers() {
         return complexNumbers;
-    }
-
-    @Override
-    public List<RationalNumber> getallRationalNumbers() {
-        return rationalNumbers;
     }
 
     @Override
@@ -27,38 +19,18 @@ public class NumberService implements NumberInter {
         Scanner scanner = new Scanner(System.in);
         double x;
         double y;
-        System.out.println("Введите действительную часть первого числа");
+        System.out.println("Введите действительную часть первого числа:");
         x = scanner.nextDouble();
-        System.out.println("Введите мнимую часть первого числа");
+        System.out.println("Введите мнимую часть первого числа:");
         y = scanner.nextDouble();
         ComplexNumber complexNumber1 = new ComplexNumber(x, y);
         complexNumbers.add(complexNumber1);
-        System.out.println("Введите действительную часть второго числа");
+        System.out.println("Введите действительную часть второго числа:");
         x = scanner.nextDouble();
-        System.out.println("Введите мнимую часть второго числа");
+        System.out.println("Введите мнимую часть второго числа:");
         y = scanner.nextDouble();
         ComplexNumber complexNumber2 = new ComplexNumber(x, y);
         complexNumbers.add(complexNumber2);
-    }
-
-    @Override
-    public void createCoupleRationalNumbers() {
-        Scanner scanner = new Scanner(System.in);
-        int x;
-        int y;
-        List<RationalNumber> list = new ArrayList<>();
-        System.out.println("Введите числитель первого числа");
-        x = scanner.nextInt();
-        System.out.println("Введите знаменатель первого числа");
-        y = scanner.nextInt();
-        RationalNumber rationalNumber1 = new RationalNumber(x,y);
-        rationalNumbers.add(rationalNumber1);
-        System.out.println("Введите числитель второго числа");
-        x = scanner.nextInt();
-        System.out.println("Введите знаменатель второго числа");
-        y = scanner.nextInt();
-        RationalNumber rationalNumber2 = new RationalNumber(x, y);
-        rationalNumbers.add(rationalNumber2);
     }
 
     @Override
@@ -98,24 +70,4 @@ public class NumberService implements NumberInter {
                 ((y.getNumerator() * y.getNumerator()) + (y.getImaginaryPart()* y.getImaginaryPart()))));
         return z;
     }
-    @Override
-    public RationalNumber addition(RationalNumber x, RationalNumber y) {
-        return x;
-    }
-
-    @Override
-    public RationalNumber subtraction(RationalNumber x, RationalNumber y) {
-        return x;
-    }
-
-    @Override
-    public RationalNumber multiplication(RationalNumber x, RationalNumber y) {
-        return x;
-    }
-
-    @Override
-    public RationalNumber division(RationalNumber x, RationalNumber y) {
-        return x;
-    }
-
 }
