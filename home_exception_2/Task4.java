@@ -6,8 +6,10 @@ import java.io.InputStreamReader;
 
 public class Task4 {
     public static void main(String[] args) {
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введите любой текст кроме пустой строки: ");
+
         try {
             String result = reader.readLine();
             if(result.isEmpty()) throw new RuntimeException("Пустую строку вводить нельзя");
